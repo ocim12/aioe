@@ -13,7 +13,7 @@ namespace aioe.Controllers
     {
         private static readonly string[] Summaries = new[]
         {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching, Emil"
+            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching, Emil,555"
         };
 
         private readonly ILogger<WeatherForecastController> _logger;
