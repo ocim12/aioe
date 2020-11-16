@@ -1,14 +1,20 @@
-import React, {useState} from 'react';
-function App(){
-  const [number,setNumber] = useState(5);
-  return(
-    <div className="App">
-      <div>{number}</div>
-      <button onClick={() => setNumber(number+1)}>+</button>
-      <button onClick={()=> setNumber(number-1)}>-</button>
-    </div>
-  );
+import React, { Component } from 'react';
+import './App.css'
+import Navbar from './components/Navbar';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Home from './page/Home'
 
+function App() {
+  return (
+    <>
+    <Router>
+      <Navbar/>
+        <Switch>
+          <Route path='/' exact component={Home}/>
+        </Switch>
+    </Router>
+    </>
+  );
 }
 
-export default App;
+export default App
