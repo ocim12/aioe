@@ -1,11 +1,15 @@
 import React, { Component } from 'react'
 
-function Logout(){
-    return (
-        <div className='home'>
-            <button>+</button>
-        </div>
-    )
+class Logout extends Component{
+
+    constructor(props){  
+   
+        }  
+        
+        
+        
+  
+  
 
 }
 
