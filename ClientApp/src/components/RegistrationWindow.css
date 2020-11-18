@@ -1,0 +1,76 @@
+.windowReg{
+    position: absolute;
+    width: 30%;
+    margin: 15vh 35%;
+    height: 70vh;
+    background: #18181F;
+    display: none;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5%;
+}
+
+.windowInput{
+    height: 50px;
+    width: 70%;
+    padding: 12px;
+    margin: 3vh auto;
+    transition: 50%;
+    filter: brightness(70%);
+    border-radius: 8px;
+    transition: 300ms;
+    outline: none;
+
+}
+
+a:link {
+    filter: brightness(100%);
+}
+.windowInput:visited {
+    filter: brightness(100%);
+}
+.windowInput:active {
+    filter: brightness(100%);
+}
+.windowInput:hover {
+    filter: brightness(100%);
+}
+
+.windowInput:focus{
+    filter: brightness(100%);
+
+}
+
+
+#registerButton{
+    margin: 2vh auto;
+    width: 40%;
+    max-height: 6vh;
+    direction: ltr;
+    text-align: center;
+    color: #2F2F30;
+    border-radius: 4px;
+    background-color: #8F8F90;
+    border: none;
+    padding: 1vh 0;
+    transition: all .3s ease-in-out ;
+    font-size: 22px;
+    font-weight: bold;
+    border-style: hidden;
+    outline: none;
+}
+
+
+#registerButton:hover{
+    background: #E9B10E;
+    color: #24252F;
+}
+
+#title{
+    margin: 3vh auto;
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+}
+

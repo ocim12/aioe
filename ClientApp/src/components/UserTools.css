@@ -8,7 +8,7 @@
     margin-top:55vh;
 }
 
-button{
+.buttonR{
     display: flex;
     width: 100%;
     margin-top: 12px;
@@ -23,9 +23,10 @@ button{
     padding-bottom: 8px;
     padding-right: 12px;
     align-items: center;
+    outline: none;
 }
 
-button:hover{
+.buttonR:hover{
     background: #E9B10E;
     color: #24252F;
     font-weight: bold;

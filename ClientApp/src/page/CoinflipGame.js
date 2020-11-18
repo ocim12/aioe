@@ -1,15 +1,16 @@
 import React, { Component } from 'react'
 
-function CoinflipGame(){
+function CoinflipGame() {
     return (
         <div className='home'>
             <header>
-            <h1>Coinflip</h1>
-            <p>Game</p>
+                <h1>Coinflip</h1>
+                <p>Game</p>
 
             </header>
-          
+
         </div>
+
     )
 
 }
