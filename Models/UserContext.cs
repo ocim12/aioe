@@ -13,11 +13,6 @@ namespace aioe.Models
 
         public DbSet<User> Users {get; set;}
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
-            if(!optionsBuilder.IsConfigured) {
-                optionsBuilder.UseSqlServer("Server=.;Database=Users; Trusted_Connection=true;");
-            }
-        }
 
     }
 }

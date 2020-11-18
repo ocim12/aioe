@@ -1,42 +1,43 @@
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using aioe.Models;
+using aioe.Data;
+using System.Collections.Generic;
+using Microsoft.AspNetCore.Authorization;
 
 namespace aioe.Controllers
 {
-
+    [Authorize]
     [ApiController]
-    [Route("aa")]
+    [Route("api/[controller]")]
     public class UserController : ControllerBase
     {
 
-        public UserController() {
-            
+        private DataContx dataContx;
+
+        public UserController(DataContx dataContx)
+        {
+            this.dataContx = dataContx;
         }
 
         [HttpGet]
         public IEnumerable<User> Get()
         {
-            using(var context = new UserContext()) {
-                return context.Users.ToList();
-            }
+            return dataContx.Users.ToList();
+
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post(User user)  {
-            using (var context = new UserContext())
-            {
-                User u = new User();
-                u.Name = user.Name;
-                u.Password = user.Password;
-                context.Users.Add(u);
-                await context.SaveChangesAsync();
-                return Ok(u);
-            }
+        public async Task<IActionResult> Post(User user)
+        {
+            User u = new User();
+            u.Name = user.Name;
+            u.Password = user.Password;
+            dataContx.Users.Add(u);
+            await dataContx.SaveChangesAsync();
+            return Ok(u);  
         }
+
     }
 }
