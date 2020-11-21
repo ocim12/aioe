@@ -33,7 +33,7 @@ namespace aioe.Controllers
         }
 
         [AllowAnonymous]
-        [HttpPost("authenticate")]
+        [HttpPost("/auth/login")]
         public IActionResult Authenticate([FromBody] UserCredentials userCredentials)
         {
             var user = dataContx.Users.FirstOrDefault(x => (x.Name == userCredentials.Name && x.Password == userCredentials.Password) );
@@ -49,7 +49,6 @@ namespace aioe.Controllers
                 user,
                 });
         }
-
 
     }
 }

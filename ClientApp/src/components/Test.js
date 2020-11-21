@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import jwt from 'jwt-decode'
+
 
 export class Test extends Component {
   static displayName = Test.name;
@@ -109,7 +109,7 @@ let token = "Bearer "+ this.state.store.store
   login() {
 
     let usa = {name: this.state.name, password: this.state.password}
-    var req = fetch('api/auth/authenticate',{
+    fetch('api/auth/authenticate',{
       method: 'POST',
       headers: {'Content-Type': 'application/json',
                 'Accept': 'application/json' },
@@ -121,7 +121,6 @@ let token = "Bearer "+ this.state.store.store
           store:result,
           user:result.user       
         }))
-          
           this.storeCollector()
       })
       if(response.status == 500) {

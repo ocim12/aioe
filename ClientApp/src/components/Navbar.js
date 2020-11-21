@@ -1,52 +1,87 @@
 import React, { useState } from 'react';
-import * as FaIcons from 'react-icons/fa';
-import * as AiIcons from 'react-icons/ai';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { SidebarData } from './SidebarData';
-import { SidebarData1 } from './SidebarData1';
 import './Navbar.css';
 import './UserTools.css';
-import {IconContext} from 'react-icons';
+import { IconContext } from 'react-icons';
+import * as BiIcons from 'react-icons/bi';
+import * as RiIcons from 'react-icons/ri';
+import Modal from 'react-modal';
+import './RegistrationWindow.css';
+import BrgGame from '../page/BrgGame';
+import { Redirect2 } from 'react-router';
+import ModalLogin from '../ModalLogin.js'
+import ModalRegister from '../ModalRegister';
+import AuthService from '../services/AuthService'
+
+
 
 function Navbar() {
-    const [sideBar, setSidebar] = useState(false);
-    const showSidebar = () => {
-      setSidebar(!sideBar);
-    }
+
+
+  const [sideBar, setSidebar] = useState(false);
+
+  const [isLogged, setisLogged] = useState(false);
+  const [modalIsOpenLog, setIsOpenLog] = useState(false);
+
+  const [modalIsOpenReg, setIsOpenReg] = useState(false);
+
+
+  const showSidebar = () => {
+    setSidebar(!sideBar);
+  }
+
+  function logout() {
+    
+      AuthService.logout();
+  }
+
+  
+
   return (
-    <>
-    <IconContext.Provider value={{color: 'red'}}> 
-    <nav className={sideBar ? 'nav-menu active' : 'nav-menu'}>
-        <ul className='nav-menu-items' onMouseOver = {showSidebar} onMouseOut = {showSidebar}>
+    <><div>
+      <IconContext.Provider value={{ color: 'red' }}>
+        <nav className={sideBar ? 'nav-menu active' : 'nav-menu'}>
+          <ul className='nav-menu-items' onMouseOver={showSidebar} onMouseOut={showSidebar}>
             <li className="navbar-toggle">
             </li>
-            {SidebarData.map((item,index) => {
-              return(
-                <li key={index} className={item.cName}>
+            {SidebarData.map((item, index) => {
+              return (
+                <li key={index} className={item.cName} >
                   <Link to={item.path}>
-                  {item.icon}
+                    {item.icon}
                     <span>{item.title}</span>
                   </Link>
                 </li>
               )
             })}
-            <div className='userTools'>
-            {SidebarData1.map((item,index) => {
-              return(
-                <li key={index} className={item.cName}>
-                  <Link to={item.path}>
-                  {item.icon}
-                    <span>{item.title}</span>
-                  </Link>
-                </li>
-              )
-            })}
+            {!isLogged?
+            <div className='userTools' >
+              <button className="buttonR" onClick={() => setIsOpenReg(true)} >
+                <RiIcons.RiRegisteredFill />
+                <span>Sign up</span>
+              </button>
 
+              <button className="buttonR" onClick={() => setIsOpenLog(true)} >
+                <RiIcons.RiLogoutBoxLine />
+                <span>Login</span>
+              </button>
             </div>
-           
-        </ul>
-    </nav>
-    </IconContext.Provider>
+            : isLogged && (
+            <div className='userTools' >
+                <p>Elo mordo {AuthService.getCurrentUser().name} o numerze ID: {AuthService.getCurrentUser().userID}</p>
+                <button className="buttonR" onClick={() => logout} >
+                <RiIcons.RiLogoutBoxLine />
+                <span>Logout</span>
+              </button>
+            </div>
+            )}
+          </ul>
+        </nav>
+        <ModalRegister isOpen= {modalIsOpenReg} requestClose= {setIsOpenReg} setIsOpenReg = {setIsOpenReg} />
+        <ModalLogin isOpen= {modalIsOpenLog} requestClose= {setIsOpenLog} setIsOpenLog = {setIsOpenLog} setisLogged = {setisLogged}/>
+      </IconContext.Provider>
+    </div>
     </>
   )
 }

@@ -2,8 +2,6 @@ import React, { PureComponent } from 'react';
 import * as FaIcons from 'react-icons/fa';
 import * as GiIcons from 'react-icons/gi';
 import * as ImIcons from 'react-icons/im';
-import * as RiIcons from 'react-icons/ri';
-import * as BiIcons from 'react-icons/bi';
 
 export const SidebarData = [
 
@@ -30,5 +28,6 @@ export const SidebarData = [
         path: '/tfgame',
         icon: <FaIcons.FaDiceThree/>,
         cName: 'nav-text'
+        
     }
 ]
