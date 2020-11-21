@@ -70,7 +70,7 @@ const ModalLogin = ({ isOpen, requestClose, setIsOpenLog, setisLogged}) => {
               setTimeout(() => resetWindow(), 3000);
               setWelcome(true);
               setisLogged(true);
-              history.push({pathname: "/brgGame", state: {a:"aaa"}})
+              history.push({pathname: "/brgGame"})
             }
           )
         }

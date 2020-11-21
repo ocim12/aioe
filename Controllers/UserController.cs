@@ -5,6 +5,7 @@ using aioe.Models;
 using aioe.Data;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.EntityFrameworkCore;
 
 namespace aioe.Controllers
 {
@@ -30,6 +31,17 @@ namespace aioe.Controllers
 
         }
 
+
+        [HttpGet("brgGame/{id}")]
+        public async Task<IActionResult> GetUsers(int id) 
+        {
+             var user = await dataContx.Users.FirstOrDefaultAsync(x => x.UserID == id);
+             return Ok(user);
+        }
+
+
+        
+
         [AllowAnonymous]
         [HttpPost("reg")]
         public async Task<IActionResult> Post([FromBody]User userGet)
@@ -50,7 +62,7 @@ namespace aioe.Controllers
             user.Name = userGet.Name;
             user.Password = userGet.Password;
             user.Email = userGet.Email;
-            dataContx.Users.Add(user);
+            await dataContx.Users.AddAsync(user);
             await dataContx.SaveChangesAsync();
             return Ok(new {
                 user,
@@ -62,7 +74,8 @@ namespace aioe.Controllers
         [HttpPost("login")]
         public IActionResult Authenticate([FromBody] UserCredentials userCredentials)
         {
-            var user = dataContx.Users.FirstOrDefault(x => (x.Name == userCredentials.Name && x.Password == userCredentials.Password) );
+
+            var user = dataContx.Users.FirstOrDefault(x => (x.Name == userCredentials.Name && x.Password == userCredentials.Password));
              if(!dataContx.Users.Any(u=> u.Name == userCredentials.Name && u.Password == userCredentials.Password)) 
              {
                  return StatusCode(302);

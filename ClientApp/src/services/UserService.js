@@ -1,11 +1,12 @@
 import authHeader from './AuthHeader'
 
-const API_URL = "http://localhost:8080/api/";
+const API_URL = "api/user/";
 
-const getBrgGameContent = () => {
+const getBrgGameContent = (userID) => {
     return fetch(API_URL+'brgGame',{
-        method: 'GET', 
-        headers: authHeader()})
+        method: 'POST', 
+        headers: authHeader(),
+        body:userID})
 }
 
 export default {
