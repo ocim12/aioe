@@ -10,6 +10,8 @@ import Tfgame from './page/Tfgame'
 import CoinflipGame from './page/CoinflipGame'
 import ModalLogin from './ModalLogin'
 import { Link, Redirect } from 'react-router-dom';
+import Roulette from './brgGame/Roulette/Roulette'
+import Chat from './Chat/Chat'
 
 function App() {
 
@@ -19,8 +21,8 @@ function App() {
       <Navbar/>
         <Switch>
           <Route exact path='/'component={Home}/>
-          <Route exact path='/brgGame' component={BrgGame}/>
-          <Route exact path='/coinflipGame' component={CoinflipGame}/>
+          <Route exact path='/brgGame' component={Roulette}/>
+          <Route exact path='/coinflipGame' component={Chat}/>
           <Route exact path='/tfgame' component={Tfgame}/>
           <Route exact path='/support' component={Support}/>
           <Route exact path='/logout' component={Logout}/>

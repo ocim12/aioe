@@ -23,3 +23,7 @@ body{
   justify-content: center;
   font-size: 3rem;
 }
+
+.App {
+  text-align: center;
+}

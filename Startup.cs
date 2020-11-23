@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
+using aioe.Hubs;
 
 namespace aioe
 {
@@ -31,6 +32,7 @@ namespace aioe
             services.AddDbContext<DataContx>(opt => opt.UseSqlServer(connectionString));
             services.AddControllers();
             services.AddCors();
+            services.AddSignalR();
 
             var key = "to_jest_moj_service_key";
 
@@ -83,6 +85,7 @@ namespace aioe
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHub<ChatHub>("/chat");
             });
 
              app.UseSpa(spa =>

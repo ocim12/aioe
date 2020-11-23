@@ -1,0 +1,14 @@
+.container{
+    width: calc(20% - 20px);
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid black;
+    height: 100%;
+    float: left;
+    background-color: #001842;;
+    color: white;
+    margin-left: 500px;
+}
+.last_win{
+    margin-bottom: 50px;
+}
