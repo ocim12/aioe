@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { HubConnectionBuilder } from '@microsoft/signalr';
-
+import classes from './Chat.css'
 import ChatWindow from './ChatWindow';
 import ChatInput from './ChatInput';
 
@@ -13,10 +13,10 @@ const Chat = () => {
 
     useEffect(() => {
         const newConnection = new HubConnectionBuilder()
-            .withUrl('https://localhost:5000/chat')
+            .withUrl('/chat')
             .withAutomaticReconnect()
             .build();
-
+        console.log(newConnection);
         setConnection(newConnection);
     }, []);
 
@@ -29,12 +29,22 @@ const Chat = () => {
                     connection.on('ReceiveMessage', message => {
                         const updatedChat = [...latestChat.current];
                         updatedChat.push(message);
-                    
+                        console.log(message);
                         setChat(updatedChat);
                     });
                 })
                 .catch(e => console.log('Connection failed: ', e));
+
+                
+           connection.on('RecieveMessage', RecieveMessage => {
+
+                const updatedChat = [...latestChat.current];
+                updatedChat.push(RecieveMessage);
+                console.log(RecieveMessage);
+                setChat(updatedChat);
+        })     
         }
+        
     }, [connection]);
 
     const sendMessage = async (user, message) => {
