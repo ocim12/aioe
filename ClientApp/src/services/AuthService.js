@@ -32,7 +32,7 @@ const logout = () => {
 
 }
 const getCurrentToken = () => {
-    return JSON.parse(localStorage.getItem('token'))
+    return localStorage.getItem('token')
 }
 
 const getCurrentUser = () => {
