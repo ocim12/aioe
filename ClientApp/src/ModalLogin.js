@@ -8,7 +8,7 @@ import { useHistory } from "react-router-dom";
 import AuthService from "./services/AuthService";
 
 
-const ModalLogin = ({ isOpen, requestClose, setIsOpenLog, setisLogged}) => {
+const ModalLogin = ({ isOpen, requestClose, setIsOpenLog, setisLogged }) => {
 
   const form = useRef();
   const checkBtn = useRef();
@@ -27,7 +27,7 @@ const ModalLogin = ({ isOpen, requestClose, setIsOpenLog, setisLogged}) => {
     setIsOpenLog(false);
     setUsername("");
     setPassword("")
-    return(<Link to={"/brgGame"}></Link>)
+    return (<Link to={"/brgGame"}></Link>)
   }
 
   const required = (value) => {
@@ -70,7 +70,7 @@ const ModalLogin = ({ isOpen, requestClose, setIsOpenLog, setisLogged}) => {
               setTimeout(() => resetWindow(), 3000);
               setWelcome(true);
               setisLogged(true);
-              history.push({pathname: "/brgGame"})
+              history.push({ pathname: "/brgGame" })
             }
           )
         }
@@ -101,7 +101,7 @@ const ModalLogin = ({ isOpen, requestClose, setIsOpenLog, setisLogged}) => {
       borderRadius: '12px',
       animation: 'true',
       position: 'absolute', left: '50%', top: '50%',
-      transform: 'translate(-50%, -50%)'
+      transform: 'translate(-50%, -50%)',
     }
   };
 

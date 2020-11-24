@@ -5,12 +5,14 @@
     padding-left: 12px;
     align-items: flex-end;
     padding-bottom: 12px;
-    margin-top:55vh;
+    position: fixed;
+    bottom: 0%;
+    width: 100%;
 }
 
 .buttonR{
     display: flex;
-    width: 100%;
+    width: 244px;
     margin-top: 12px;
     background-color: #24252F;
     border: none;

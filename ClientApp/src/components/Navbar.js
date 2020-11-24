@@ -18,7 +18,6 @@ import AuthService from '../services/AuthService'
 
 function Navbar() {
 
-
   const [sideBar, setSidebar] = useState(false);
 
   const [isLogged, setisLogged] = useState(false);
@@ -32,11 +31,11 @@ function Navbar() {
   }
 
   function logout() {
-    
-      AuthService.logout();
+
+    AuthService.logout();
   }
 
-  
+
 
   return (
     <><div>
@@ -55,31 +54,31 @@ function Navbar() {
                 </li>
               )
             })}
-            {!isLogged?
-            <div className='userTools' >
-              <button className="buttonR" onClick={() => setIsOpenReg(true)} >
-                <RiIcons.RiRegisteredFill />
-                <span>Sign up</span>
-              </button>
+            {!isLogged ?
+              <div className='userTools' >
+                <button className="buttonR" onClick={() => setIsOpenReg(true)} >
+                  <RiIcons.RiRegisteredFill />
+                  <span>Sign up</span>
+                </button>
 
-              <button className="buttonR" onClick={() => setIsOpenLog(true)} >
-                <RiIcons.RiLogoutBoxLine />
-                <span>Login</span>
-              </button>
-            </div>
-            : isLogged && (
-            <div className='userTools' >
-                <p>Elo mordo {AuthService.getCurrentUser().name} o numerze ID: {AuthService.getCurrentUser().userID}</p>
-                <button className="buttonR" onClick={() => logout} >
-                <RiIcons.RiLogoutBoxLine />
-                <span>Logout</span>
-              </button>
-            </div>
-            )}
+                <button className="buttonR" onClick={() => setIsOpenLog(true)} >
+                  <RiIcons.RiLogoutBoxLine />
+                  <span>Login</span>
+                </button>
+              </div>
+              : isLogged && (
+                <div className='userTools' >
+                  <p>Elo mordo {AuthService.getCurrentUser().name} o numerze ID: {AuthService.getCurrentUser().userID}</p>
+                  <button className="buttonR" onClick={() => logout} >
+                    <RiIcons.RiLogoutBoxLine />
+                    <span>Logout</span>
+                  </button>
+                </div>
+              )}
           </ul>
         </nav>
-        <ModalRegister isOpen= {modalIsOpenReg} requestClose= {setIsOpenReg} setIsOpenReg = {setIsOpenReg} />
-        <ModalLogin isOpen= {modalIsOpenLog} requestClose= {setIsOpenLog} setIsOpenLog = {setIsOpenLog} setisLogged = {setisLogged}/>
+        <ModalRegister isOpen={modalIsOpenReg} requestClose={setIsOpenReg} setIsOpenReg={setIsOpenReg} />
+        <ModalLogin isOpen={modalIsOpenLog} requestClose={setIsOpenLog} setIsOpenLog={setIsOpenLog} setisLogged={setisLogged} />
       </IconContext.Provider>
     </div>
     </>

@@ -1,19 +1,39 @@
 .number{
-    padding: 10px;
     display: inline-block;
-    border: 1px solid white;
+    border: 2px solid white;
     width: 75px;
     height: 75px;
     line-height: 55px;
     font-size: 30px;
     color: white;
+    border-radius: 10px;
+    padding-top: 7px;
+    margin: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    
+    
+    
 }
 .red{
-    background: red;
+    background: #ff0000;
 }
+
+.red:hover{
+    background-color: #e42525;
+}
+
 .black{
-    background: black;
+    background: rgb(0, 0, 0);
 }
+
+.black:hover{
+    background-color: #242222;
+}
+
 .green{
     background: green;
+}
+.green:hover{
+    background-color: #039103;
 }

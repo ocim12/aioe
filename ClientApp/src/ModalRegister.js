@@ -118,7 +118,8 @@ const ModalRegister = ({ isOpen, requestClose, setIsOpenReg }) => {
       borderRadius: '12px',
       animation: 'true',
       position: 'absolute', left: '50%', top: '50%',
-      transform: 'translate(-50%, -50%)'
+      transform: 'translate(-50%, -50%)',
+      zindex: '500'
     }
   };
 
@@ -158,76 +159,74 @@ const ModalRegister = ({ isOpen, requestClose, setIsOpenReg }) => {
       contentLabel="Example Modal"
       ariaHideApp={false}
     >
-      
-
-      {success? 
-      <div>
-        Thats it {username}! Be welcomed in our community!
+      {success ?
+        <div>
+          Thats it {username}! Be welcomed in our community!
         </div>
         :
         <div id="title"><span id="title">We are glad, you are here</span></div>
       }
 
       <Form onSubmit={handleRegister} ref={form}>
-          <div>
-            <div className="form-group">
-              <label htmlFor="username"></label>
-              <Input
-                type="text"
-                placeholder="Login"
-                className="form-control"
-                name="username"
-                value={username}
-                onChange={onChangeUsername}
-                validations={[required, vusername]}
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="email"></label>
-              <Input
-                type="text"
-                className="form-control"
-                placeholder="Email"
-                name="email"
-                value={email}
-                onChange={onChangeEmail}
-                validations={[required, validEmail]}
-
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="password"></label>
-              <Input
-                type="password"
-                className="form-control"
-                placeholder="Password"
-                name="password"
-                value={password}
-                onChange={onChangePassword}
-                validations={[required, vpassword]}
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="passConfirm"></label>
-              <Input
-                type="password"
-                placeholder="Confirm password"
-                className="form-control"
-                name="passConfirm"
-                value={passConfirm}
-                onChange={onChangePassConfirm}
-                validations={[required, vPassConfirm]}
-              />
-            </div>
-
-            <div className="form-group">
-              <button className="btn btn-primary btn-block" id="registerButton">Register</button>
-            </div>
+        <div>
+          <div className="form-group">
+            <label htmlFor="username"></label>
+            <Input
+              type="text"
+              placeholder="Login"
+              className="form-control"
+              name="username"
+              value={username}
+              onChange={onChangeUsername}
+              validations={[required, vusername]}
+            />
           </div>
-        
+
+          <div className="form-group">
+            <label htmlFor="email"></label>
+            <Input
+              type="text"
+              className="form-control"
+              placeholder="Email"
+              name="email"
+              value={email}
+              onChange={onChangeEmail}
+              validations={[required, validEmail]}
+
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="password"></label>
+            <Input
+              type="password"
+              className="form-control"
+              placeholder="Password"
+              name="password"
+              value={password}
+              onChange={onChangePassword}
+              validations={[required, vpassword]}
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="passConfirm"></label>
+            <Input
+              type="password"
+              placeholder="Confirm password"
+              className="form-control"
+              name="passConfirm"
+              value={passConfirm}
+              onChange={onChangePassConfirm}
+              validations={[required, vPassConfirm]}
+            />
+          </div>
+
+          <div className="form-group">
+            <button className="btn btn-primary btn-block" id="registerButton">Register</button>
+          </div>
+        </div>
+
 
         {nameBusy ?
           <div className="form-group">
