@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using System.Collections.Generic;
+using System;
 
 namespace aioe.Hubs
 {
@@ -29,11 +30,27 @@ namespace aioe.Hubs
             await Clients.All.LoggedUsers(OnlineUsersHandler.UsersOnline);
         }
 
-        public override Task OnConnectedAsync()
+        public Task Disconnect() 
+        {
+            OnlineUsersHandler.UsersOnline.Remove(Context.User.Identity.Name);
+            LoggedUsers();
+            return Task.CompletedTask;
+        }
+
+        public override async Task OnConnectedAsync()
         {
             OnlineUsersHandler.UsersOnline.Add(Context.User.Identity.Name);
-            LoggedUsers();
-            return base.OnConnectedAsync();
+            await LoggedUsers();
+            await base.OnConnectedAsync();
         }
+
+        public override async Task OnDisconnectedAsync(Exception exception)
+        {
+            OnlineUsersHandler.UsersOnline.Remove(Context.User.Identity.Name);
+            await LoggedUsers();
+            await base.OnDisconnectedAsync(exception);
+        }
+
+        
     }
 }

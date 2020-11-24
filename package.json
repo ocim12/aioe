@@ -1,0 +1,29 @@
+{
+  "name": "aioe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@microsoft/signalr": "^5.0.0",
+    "react-bootstrap": "^1.4.0",
+    "react-icons": "^3.11.0",
+    "react-modal": "^3.11.2",
+    "react-tabs": "^3.1.1",
+    "react-validation": "^3.0.7",
+    "validator": "^13.1.17"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ocim12/aioe.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ocim12/aioe/issues"
+  },
+  "homepage": "https://github.com/ocim12/aioe#readme"
+}

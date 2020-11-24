@@ -3,6 +3,7 @@ import classes from './Roulette.module.css';
 import Board from '../Board/Board';
 import RecentNumbers from '../RecentNumbers/RecentNumbers';
 import BettingPanel from '../BettingPanel/BettingPanel';
+import Chat from '../../Chat/Chat'
 class Roulette extends Component {
 /**
  * Component for entire Roulette game and its children
@@ -124,6 +125,9 @@ class Roulette extends Component {
                         lastFive={this.state.lastFive}
                         black_numbers={black_numbers}
                     />
+
+                    <Chat/>
+
                     <BettingPanel
                         spin={this.spin}
                         complete={this.state.spin_complete}

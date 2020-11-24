@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { HubConnectionBuilder } from '@microsoft/signalr';
-import classes from './Chat.css'
+import './Chat.css'
 import ChatWindow from './ChatWindow';
 import ChatInput from './ChatInput';
 import AuthService from '../services/AuthService'
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
 
 const Chat = () => {
     const [connection, setConnection] = useState(null);
@@ -45,10 +47,11 @@ const Chat = () => {
             connection.on('LoggedUsers', LoggedUsers => {
                 console.log(LoggedUsers);
             })
-            
+            return () =>{ connection.send('Disconnect')}
         }
 
     }, [connection]);
+
 
     const sendMessage = async (user, message) => {
         const chatMessage = {
@@ -74,28 +77,30 @@ const Chat = () => {
     }
 
     return (
-        <div className='home'>
+        
+        <div className= 'chat' >
             
-                <ChatInput sendMessage={sendMessage} />
-                <hr />
-                <ChatWindow chat={chat} />
-                <AppBar position="static">
-  <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
-    <Tab label="Item One" {...a11yProps(0)} />
-    <Tab label="Item Two" {...a11yProps(1)} />
-    <Tab label="Item Three" {...a11yProps(2)} />
-  </Tabs>
-</AppBar>
-<TabPanel value={value} index={0}>
-  Item One
-</TabPanel>
-<TabPanel value={value} index={1}>
-  Item Two
-</TabPanel>
-<TabPanel value={value} index={2}>
-  Item Three
-</TabPanel>
+            <Tabs>
+                <TabList>
+                <Tab>Chat</Tab>
+                <Tab>Users Online</Tab>
+                </TabList>
+
+                <TabPanel>
+                <h2>Any content 1</h2>
+                </TabPanel>
+                <TabPanel>
+                <h2>Any content 2</h2>
+                </TabPanel>
+            </Tabs>
+            
         </div>
+        /* <div className='home'>
+            <ChatInput sendMessage={sendMessage} />
+            <hr />
+            <ChatWindow chat={chat} />
+        </div> */
+        
     );
 };
 
