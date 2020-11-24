@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import classes from './Board.module.css';
 import Square from '../Square/Square';
 import Auxillary from '../Auxillary';
+import Navbar from '../../components/Navbar';
 
 class Board extends Component {
-    render(){
+    render() {
         let numbers = [...Array(15).keys()]
         // numbers.splice(8, 0, "00")
         let output = []
-        for(var i = 0; i < 10; i++){
+        for (var i = 0; i < 10; i++) {
             output.push(...numbers);
         }
         const black_numbers = this.props.black_numbers;
@@ -18,7 +19,7 @@ class Board extends Component {
                     let colour = null;
                     if (black_numbers.includes(number)) {
                         colour = 'black';
-                    } else if (number === 0 || number === "00"){
+                    } else if (number === 0 || number === "00") {
                         colour = 'green';
                     } else {
                         colour = 'red';
@@ -39,13 +40,13 @@ class Board extends Component {
         let containerClasses = [classes.spinItemsContainer];
         let spinner = null;
         // Spin logic, checks if the spin bool is set to true and if so, the animation is added
-        if(this.props.spin === true){
+        if (this.props.spin === true) {
             spinner = (
                 <div style={style} className={containerClasses.join(" ")}>
                     {squares}
                 </div>
             )
-        } else{
+        } else {
             spinner = (
                 <div className={containerClasses.join(" ")}>
                     {squares}
@@ -53,13 +54,15 @@ class Board extends Component {
             )
         }
         return (
-            <Auxillary>
-                <div className={classes.outer}>
-                    <div className={classes.spinContainer}>
-                        {spinner}
+            <>
+                <Auxillary>
+                    <div className={classes.outer}>
+                        <div className={classes.spinContainer}>
+                            {spinner}
+                        </div>
                     </div>
-                </div>
-            </Auxillary>
+                </Auxillary>
+            </>
 
         )
     }

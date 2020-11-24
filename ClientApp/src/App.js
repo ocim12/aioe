@@ -24,15 +24,15 @@ function App() {
     <Router>
       <Navbar/> 
         <Switch>
-          <Route exact path='/'component={Home}/>
-          <Route exact path='/brgGame' component={Roulette}/>
-          <Route exact path='/coinflipGame' component={Chat}/>
-          <Route exact path='/tfgame' component={Tfgame}/>
-          <Route exact path='/support' component={Support}/>
-          <Route exact path='/logout' component={Logout}/>
-          <Route exact path='/chat' component={Chat}/>
+          <Route exact path='/' component={Home} />
+          <Route exact path='/brgGame' component={Roulette} />
+          <Route exact path='/coinflipGame' component={Chat} />
+          <Route exact path='/tfgame' component={Tfgame} />
+          <Route exact path='/support' component={Support} />
+          <Route exact path='/logout' component={Logout} />
+          <Route exact path='/chat' component={Chat} />
         </Switch>
-    </Router>
+      </Router>
     </>
   );
 }

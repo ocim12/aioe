@@ -8,14 +8,15 @@
 .centre{
   position: absolute;
   top: 0;
-  left: calc(50% - 2.5px);
-  z-index: 100;
+  left: calc(50% + 67.5px);
+  z-index: 1;
+
 }
 .spinButton{
   cursor: pointer;
   padding: 20px;
   border: 1px solid black;
-  background: #eee;
+  background: rgb(238, 238, 238);
   transition: all 0.4s;
   -webkit-transition: all 0.4s;
   -moz-transition: all 0.4s;
@@ -32,4 +33,5 @@
   display: table;
   width: 100vw;
   height: 500px;
+  /* background-color: #000000; */
 }

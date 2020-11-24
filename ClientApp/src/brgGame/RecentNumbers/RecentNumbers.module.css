@@ -2,13 +2,18 @@
     width: calc(20% - 20px);
     padding: 20px;
     margin: 10px;
-    border: 1px solid black;
+    border-radius: 12px;
+    background-color: #3F4044;
     height: 100%;
     float: left;
-    background-color: #001842;;
     color: white;
-    margin-left: 500px;
+    text-align: center;
+    margin-left: 80px;
 }
 .last_win{
     margin-bottom: 50px;
+}
+
+.container:hover{
+    background-color: #47484d ;
 }

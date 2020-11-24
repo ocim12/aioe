@@ -20,15 +20,16 @@
     position: relative;
     text-align: center;
     width: 8450px;
-        backface-visibility: hidden;
+    backface-visibility: hidden;
+
 }
 .outer{
-    width: 100%;
+    
+    width: 1490px;
     position: relative;
     padding: 5px 0;
-    margin: 5px 0;
-    background-color: #001842;
-    border: 3px solid #001842;
+    background-color: #5F6066;
+    border: 3px solid #5F6066;
     overflow: hidden;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -40,12 +41,15 @@
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
+    left: 35px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .spinContainer{
-    z-index: 1;
-    width: 1560px;
-    min-width: 1560px;
-    max-width: 1560px;
+
+    width: 1490px;
+    min-width: 1490px;
+    max-width: 1490px;
     overflow: hidden;
     position: relative;
 }
