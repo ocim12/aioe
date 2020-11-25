@@ -3,10 +3,11 @@ import classes from './Roulette.module.css';
 import Board from '../Board/Board';
 import RecentNumbers from '../RecentNumbers/RecentNumbers';
 import BettingPanel from '../BettingPanel/BettingPanel';
+
 class Roulette extends Component {
-/**
- * Component for entire Roulette game and its children
- */
+    /**
+     * Component for entire Roulette game and its children
+     */
     state = {
         spinNum: 0,
         spin: false,
@@ -68,8 +69,8 @@ class Roulette extends Component {
      * @param {object} obj - The object built via create_obj()
      */
     getResult = (chosen, obj) => {
-        for(var key in obj){
-            if(obj[key][0] <= chosen && obj[key][1] >= chosen){
+        for (var key in obj) {
+            if (obj[key][0] <= chosen && obj[key][1] >= chosen) {
                 return key
             }
         }
@@ -101,7 +102,7 @@ class Roulette extends Component {
 
     render() {
         let btn_dis_style = null;
-        if(this.state.btn_disable){
+        if (this.state.btn_disable) {
             btn_dis_style = {
                 cursor: 'not-allowed'
             }
@@ -112,11 +113,11 @@ class Roulette extends Component {
         return (
             <div className={classes.App}>
                 <div className={classes.centre}></div>
-                <Board 
-                    spin={this.state.spin} 
-                    complete={this.state.spin_complete} 
-                    chosen_number={this.state.chosen} 
-                    black_numbers={black_numbers} 
+                <Board
+                    spin={this.state.spin}
+                    complete={this.state.spin_complete}
+                    chosen_number={this.state.chosen}
+                    black_numbers={black_numbers}
                 />
                 <div className={classes.mid_container}>
                     <RecentNumbers

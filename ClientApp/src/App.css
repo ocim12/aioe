@@ -16,14 +16,22 @@ body{
 
 .home { 
   display: flex;
-  height: 90vh;
+  height: 100vh;
   width: 100%;
-  text-align: center;
-  align-items: center;
   justify-content: center;
-  font-size: 3rem;
 }
+
 
 .App {
   text-align: center;
 }
+
+#logoid{
+  min-width: 220px;
+  max-width: 220px;
+  min-height: 260px;
+  max-height: 260px;
+  cursor: pointer;
+  margin: 40px;
+}
+

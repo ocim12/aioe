@@ -64,6 +64,8 @@
     margin: 20px auto;
     align-items: right;
     border-radius: 40px;
+    padding: 15px;
+    
 }
 
 span{
@@ -75,4 +77,25 @@ span{
     top: 30%;
     left: 30%;
     transform: translate(-50%, -50%);
+}
+
+.picture-place{
+    border-radius: 50%;
+    background-color: #3e3f4b;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 65px;
+    height: 65px;
+    
+}
+
+.player-info{
+    display: grid;
+    padding: 7px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10px;
+    text-align: center;
+    max-width: fit-content;
+    
 }

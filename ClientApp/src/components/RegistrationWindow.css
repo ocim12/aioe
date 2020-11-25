@@ -1,27 +1,21 @@
-.windowReg{
-    position: absolute;
-    width: 30%;
-    margin: 15vh 35%;
-    height: 70vh;
-    background: #18181F;
-    display: none;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    border-radius: 5%;
-}
+.inputs-group{
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+
+  
+  }
+
 
 .windowInput{
     height: 50px;
-    width: 70%;
+    width: 100%;
     padding: 12px;
-    margin: 3vh auto;
     transition: 50%;
     filter: brightness(70%);
     border-radius: 8px;
     transition: 300ms;
     outline: none;
-
 }
 
 a:link {
@@ -44,7 +38,7 @@ a:link {
 
 
 #registerButton{
-    margin: 2vh auto;
+    margin: 3vh auto;
     width: 40%;
     max-height: 6vh;
     direction: ltr;
@@ -61,15 +55,43 @@ a:link {
     outline: none;
 }
 
+#loginButton{
+    margin: 3vh auto;
+    width: 40%;
+    max-height: 6vh;
+    direction: ltr;
+    text-align: center;
+    color: #2F2F30;
+    border-radius: 4px;
+    background-color: #8F8F90;
+    border: none;
+    padding: 1vh 0;
+    transition: all .3s ease-in-out ;
+    font-size: 22px;
+    font-weight: bold;
+    border-style: hidden;
+    outline: none;
+    
+}
+
 
 #registerButton:hover{
     background: #E9B10E;
     color: #24252F;
 }
 
+#loginButton:hover{
+    background: #E9B10E;
+    color: #24252F;
+}
+
+
 #title{
-    margin: 3vh auto;
-    font-size: 36px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 1vh;
+    margin-bottom: 0px;
+    font-size: 39px;
     font-weight: bold;
     text-align: center;
 }

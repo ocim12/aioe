@@ -8,7 +8,7 @@ import * as BiIcons from 'react-icons/bi';
 import * as RiIcons from 'react-icons/ri';
 import Modal from 'react-modal';
 import './RegistrationWindow.css';
-import BrgGame from '../page/BrgGame';
+
 import { Redirect2 } from 'react-router';
 import ModalLogin from '../ModalLogin.js'
 import ModalRegister from '../ModalRegister';
@@ -42,8 +42,14 @@ function Navbar() {
       <IconContext.Provider value={{ color: 'red' }}>
         <nav className={sideBar ? 'nav-menu active' : 'nav-menu'}>
           <ul className='nav-menu-items' onMouseOver={showSidebar} onMouseOut={showSidebar}>
-            <li className="navbar-toggle">
-            </li>
+            <div className="navbar-toggle">
+              <div className="picture-place">
+              </div>
+              <div className="player-info">
+                <span>Nick gracza</span>
+                <span>Balans gracza</span>
+              </div>
+            </div>
             {SidebarData.map((item, index) => {
               return (
                 <li key={index} className={item.cName} >

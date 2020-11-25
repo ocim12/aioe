@@ -6,6 +6,7 @@ import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
 import { useHistory } from "react-router-dom";
 import AuthService from "./services/AuthService";
+import '../src/components/RegistrationWindow.css'
 
 
 const ModalLogin = ({ isOpen, requestClose, setIsOpenLog, setisLogged }) => {
@@ -129,7 +130,7 @@ const ModalLogin = ({ isOpen, requestClose, setIsOpenLog, setisLogged }) => {
 
             <Input
               type="text"
-              className="form-control"
+              className="windowInput"
               placeholder="Login"
               name="username"
               value={username}
@@ -142,7 +143,7 @@ const ModalLogin = ({ isOpen, requestClose, setIsOpenLog, setisLogged }) => {
             <Input
               type="password"
               placeholder="Password"
-              className="form-control"
+              className="windowInput"
               name="password"
               value={password}
               onChange={onChangePassword}
@@ -155,7 +156,7 @@ const ModalLogin = ({ isOpen, requestClose, setIsOpenLog, setisLogged }) => {
               {loading && (
                 <span className="spinner-border spinner-border-sm"></span>
               )}
-              <span>Login</span>
+              Login
             </button>
           </div>
 

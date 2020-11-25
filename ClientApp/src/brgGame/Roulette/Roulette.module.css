@@ -16,7 +16,7 @@
   cursor: pointer;
   padding: 20px;
   border: 1px solid black;
-  background: rgb(238, 238, 238);
+  background: #eeeeee;
   transition: all 0.4s;
   -webkit-transition: all 0.4s;
   -moz-transition: all 0.4s;
@@ -33,5 +33,5 @@
   display: table;
   width: 100vw;
   height: 500px;
-  /* background-color: #000000; */
+   background-color: transparent; 
 }

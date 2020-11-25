@@ -6,6 +6,7 @@ import { useHistory } from 'react-router-dom';
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
+import '../src/components/RegistrationWindow.css'
 
 import { isEmail } from "validator";
 
@@ -168,13 +169,13 @@ const ModalRegister = ({ isOpen, requestClose, setIsOpenReg }) => {
       }
 
       <Form onSubmit={handleRegister} ref={form}>
-        <div>
+        <div className="inputs-group">
           <div className="form-group">
             <label htmlFor="username"></label>
             <Input
               type="text"
               placeholder="Login"
-              className="form-control"
+              className="windowInput"
               name="username"
               value={username}
               onChange={onChangeUsername}
@@ -186,7 +187,7 @@ const ModalRegister = ({ isOpen, requestClose, setIsOpenReg }) => {
             <label htmlFor="email"></label>
             <Input
               type="text"
-              className="form-control"
+              className="windowInput"
               placeholder="Email"
               name="email"
               value={email}
@@ -200,7 +201,7 @@ const ModalRegister = ({ isOpen, requestClose, setIsOpenReg }) => {
             <label htmlFor="password"></label>
             <Input
               type="password"
-              className="form-control"
+              className="windowInput"
               placeholder="Password"
               name="password"
               value={password}
@@ -214,7 +215,7 @@ const ModalRegister = ({ isOpen, requestClose, setIsOpenReg }) => {
             <Input
               type="password"
               placeholder="Confirm password"
-              className="form-control"
+              className="windowInput"
               name="passConfirm"
               value={passConfirm}
               onChange={onChangePassConfirm}
