@@ -9,6 +9,7 @@
     color: white;
     text-align: center;
     margin-left: 80px;
+    height: fit-content;
 }
 .last_win{
     margin-bottom: 50px;
