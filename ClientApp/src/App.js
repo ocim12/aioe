@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect } from 'react';
 import './App.css'
 import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -11,10 +11,14 @@ import Chat from './Chat/Chat'
 
 function App() {
 
+  
+  useEffect( () => {
+    localStorage.clear();
+  })
   return (
     <>
-      <Router>
-        <Navbar />
+    <Router>
+      <Navbar/> 
         <Switch>
           <Route exact path='/' component={Home} />
           <Route exact path='/brgGame' component={Roulette} />

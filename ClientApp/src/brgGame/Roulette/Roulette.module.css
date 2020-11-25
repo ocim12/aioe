@@ -33,5 +33,10 @@
   display: table;
   width: 100vw;
   height: 500px;
+<<<<<<< HEAD
    background-color: transparent; 
+=======
+  margin-top: 20px;
+ background-color: #000000; 
+>>>>>>> 4f7d41095abbe9f55b42013793c376831a1639c4
 }
